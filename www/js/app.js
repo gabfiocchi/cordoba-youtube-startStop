@@ -23,7 +23,7 @@ angular.module('starter', ['ionic'])
     });
   })
   .controller('YouTubeCtrl', [function() {
-    // Is only necessary in Android since it is one of
+    // Is only necessary for Android since it is one of
     // the new terms and conditions of Google Play.
     if (ionic.Platform.isAndroid()) {
       // device APIs are available
@@ -46,7 +46,6 @@ angular.module('starter', ['ionic'])
       var frame = document.getElementById("iframeVideo");
       if (frame !== null) {
         var videoYoutube = document.getElementsByTagName("iframe")[0].contentWindow;
-        console.debug(videoYoutube);
         videoYoutube.postMessage('{"event":"command","func":"' + state + '","args":""}', '*');
       }
     }
